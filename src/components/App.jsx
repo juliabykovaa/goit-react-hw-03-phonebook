@@ -36,7 +36,9 @@ export class App extends Component {
 
   componentDidMount() {
     const savedContact = JSON.parse(localStorage.getItem('phone'));
-    this.setState({ contacts: savedContact });
+    if (savedContact) {
+      this.setState({ contacts: savedContact });
+    }
   }
 
   changeFilter = e => {
